@@ -4,6 +4,9 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
 }
+.w1 img{
+  border-radius: 20px;
+}
 
 .layout_padding {
   padding-top: 120px;
@@ -1124,4 +1127,64 @@ a:focus {
 }
 
 /* end footer section*/
+
+/* gallery section */
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.gallery-item {
+  margin-bottom: 20px;
+}
+
+/* end gallery section */
+
+/* mission and vision section */
+.mission-section {
+  padding: 60px 0;
+}
+.mission-section h2 {
+  margin-bottom: 20px;
+}
+.mission-vision {
+  background-color: #e5e8eb;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 15px;
+}
+/* end mission and vision section */
+
+/* team section */
+.team-member {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* end team section */
+
+.galllery-btn{
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+  width: 50px;
+  background-color: #4E9359;
+  padding: 15px;
+  width: 150px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.galllery-btn a {
+  color: white;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */

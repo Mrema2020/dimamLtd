@@ -86,18 +86,18 @@
                 Feel free to reach out for Dimam pharmagro company Ltd for product inquiries, or expert advice. We’re here to support the health and well-being of your animals!
               </p>
             </div>
-            <form action="">
+            <form action="" id="contactForm">
               <div>
-                <input type="text" placeholder="Full Name " />
+                <input type="text" placeholder="Full Name " id="fullName" required/>
               </div>
               <div>
-                <input type="text" placeholder="Phone number" />
+                <input type="text" placeholder="Phone number" id="phone" required/>
               </div>
               <div>
-                <input type="email" placeholder="Email" />
+                <input type="email" placeholder="Email" id="email" required/>
               </div>
               <div>
-                <input type="text" class="message-box" placeholder="Message" />
+                <input type="text" class="message-box" placeholder="Message" id="message" required/>
               </div>
               <div class="d-flex ">
                 <button>
@@ -110,7 +110,7 @@
         <div class="col-md-6 px-0">
           <div class="map_container">
             <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.546951204098!2d37.3385971!3d-3.3574543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1839d8332918520d%3A0xb90fe5dcb7c27f5f!2sJ8RQ%2BXR8%2C%20Lindi%20Street!5e0!3m2!1sen!2s!4v1708950000000" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d773.1811031998841!2d37.37032939972944!3d-3.334697763152309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMjAnMDUuMyJTIDM3wrAyMicxMS44IkU!5e0!3m2!1sen!2stz!4v1741333342936!5m2!1sen!2stz" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -229,6 +229,35 @@
       document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style")
     }
   </script>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      console.log("Humu Tu 😱");
+      
+      const formData = {
+          fullName: document.getElementById("fullName").value,
+          phone: document.getElementById("phone").value,
+          email: document.getElementById("email").value,
+          message: document.getElementById("message").value
+      };
+
+      console.log(formData);
+
+      const response = await fetch("http://127.0.0.1:5500/send-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+          alert("Message sent successfully!");
+          document.getElementById("contactForm").reset();
+      } else {
+          alert("Failed to send message. Try again.");
+      }
+  });
+</script>
 
 </body>
 
